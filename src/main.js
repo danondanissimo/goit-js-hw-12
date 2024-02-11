@@ -111,13 +111,12 @@ loadMore.addEventListener('click', async () => {
   const itemHeight = document
     .querySelector('.gallery-item')
     .getBoundingClientRect().height;
-  console.log(itemHeight);
-  const scrollHeightCorrecter = itemHeight * 2;
-  console.log(scrollHeightCorrecter);
+
+  const scrollHeightCorrected = itemHeight * 2;
 
   checkButtonStatus();
   window.scrollBy({
-    top: scrollHeightCorrecter,
+    top: scrollHeightCorrected,
     behavior: 'smooth',
   });
 });
