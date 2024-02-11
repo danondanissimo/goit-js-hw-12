@@ -137,8 +137,8 @@ function searchPhoto(searchedImage) {
 }
 
 function checkButtonStatus() {
-  // const maxPage = Math.ceil(totalResult / defaultPageSize);
-  const maxPage = 2;
+  const maxPage = Math.ceil(totalResult / defaultPageSize);
+
   if (maxPage <= currentPage) {
     loadMore.classList.add('hidden');
     iziToast.show({
