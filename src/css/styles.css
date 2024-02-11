@@ -222,3 +222,8 @@ body {
   width: 1112px;
   height: 640px;
 }
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
