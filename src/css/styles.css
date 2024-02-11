@@ -210,6 +210,35 @@ body {
   line-height: 2;
 }
 
+.load-more {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background-color: #4e75ff;
+  border-color: #4e75ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  border-style: hidden;
+  display: flex;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-left: auto;
+
+  justify-content: center;
+}
+
+.load-more:hover,
+.load-more:focus {
+  background-color: #6c8cff;
+  border-color: #6c8cff;
+}
+
 .modal {
   width: 1112px;
   height: 640px;
