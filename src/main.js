@@ -111,7 +111,7 @@ loadMore.addEventListener('click', async () => {
   const itemHeight = document
     .querySelector('.gallery-item')
     .getBoundingClientRect().height;
-
+  console.log(itemHeight);
   const scrollHeightCorrecter = itemHeight * 2 + 48;
   console.log(scrollHeightCorrecter);
 

@@ -167,6 +167,11 @@ body {
   z-index: 2;
 }
 
+.gallery-link {
+  max-width: 360px;
+  max-height: 200px;
+}
+
 .gallery-image {
   object-fit: cover;
 }
