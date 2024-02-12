@@ -82,21 +82,25 @@ searchForm.addEventListener('submit', async e => {
   currentPage = 1;
   photoContainer.replaceChildren();
   currentQuery = e.target.elements.query.value.trim();
-  if (currentQuery.length === 0) {
-    iziToast.show({
-      message: 'Search field cannot be empty!',
-      closeOnClick: true,
-      closeOnEscape: true,
-    });
-  } else {
-    loader.style.display = 'block';
-    const data = await searchPhoto(currentQuery);
+  try {
+    if (currentQuery.length === 0) {
+      iziToast.show({
+        message: 'Search field cannot be empty!',
+        closeOnClick: true,
+        closeOnEscape: true,
+      });
+    } else {
+      loader.style.display = 'block';
+      const data = await searchPhoto(currentQuery);
 
-    renderPhoto(data);
-    loader.style.display = 'none';
+      renderPhoto(data);
+      loader.style.display = 'none';
 
-    e.target.reset();
-    checkButtonStatus();
+      e.target.reset();
+      checkButtonStatus();
+    }
+  } catch (error) {
+    console.log(error);
   }
 });
 
@@ -105,20 +109,24 @@ loadMore.addEventListener('click', async () => {
   loader.style.display = 'block';
   const data = await searchPhoto(currentQuery);
 
-  renderPhoto(data);
-  loader.style.display = 'none';
+  try {
+    renderPhoto(data);
+    loader.style.display = 'none';
 
-  const itemHeight = document
-    .querySelector('.gallery-item')
-    .getBoundingClientRect().height;
+    const itemHeight = document
+      .querySelector('.gallery-item')
+      .getBoundingClientRect().height;
 
-  const scrollHeightCorrected = itemHeight * 2;
+    const scrollHeightCorrected = itemHeight * 2;
 
-  checkButtonStatus();
-  window.scrollBy({
-    top: scrollHeightCorrected,
-    behavior: 'smooth',
-  });
+    checkButtonStatus();
+    window.scrollBy({
+      top: scrollHeightCorrected,
+      behavior: 'smooth',
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 function searchPhoto(searchedImage) {
