@@ -64,6 +64,7 @@ body {
 }
 
 .loader {
+  display: none;
   position: relative;
   width: 130px;
   height: 100px;
@@ -77,6 +78,11 @@ body {
   background-size: 80px 70px, 30px 50px, 30px 30px;
   background-position: 0 0, 80px 20px, 100px 40px;
 }
+
+.loader-shown {
+  display: block;
+}
+
 .loader:after {
   content: '';
   position: absolute;

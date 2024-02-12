@@ -90,11 +90,11 @@ searchForm.addEventListener('submit', async e => {
         closeOnEscape: true,
       });
     } else {
-      loader.style.display = 'block';
+      loader.classList.add('loader-shown');
       const data = await searchPhoto(currentQuery);
 
       renderPhoto(data);
-      loader.style.display = 'none';
+      loader.classList.remove('loader-shown');
 
       e.target.reset();
       checkButtonStatus();
@@ -106,12 +106,12 @@ searchForm.addEventListener('submit', async e => {
 
 loadMore.addEventListener('click', async () => {
   currentPage += 1;
-  loader.style.display = 'block';
+  loader.classList.add('loader-shown');
   const data = await searchPhoto(currentQuery);
 
   try {
     renderPhoto(data);
-    loader.style.display = 'none';
+    loader.classList.remove('loader-shown');
 
     const itemHeight = document
       .querySelector('.gallery-item')
